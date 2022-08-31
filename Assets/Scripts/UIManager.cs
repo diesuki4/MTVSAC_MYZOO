@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject HistoryScene;
 
     public GameObject Cat;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,13 +43,8 @@ public class UIManager : MonoBehaviour
         Cat.SetActive(true);
     }
 
-    //public void PressButtonToHistory()
-    //{
-    //    HistoryScene.SetActive(true);
-    //}
-
-    //public void PressButtonToReturnGame()
-    //{
-    //    HistoryScene.SetActive(false);
-    //}
+    public void OnClickPlayBtn(HPManager hpManager)
+    {
+        hpManager.hp += 20;
+    }
 }
