@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
     public GameObject modellingScene;
     public GameObject gameScene;
     public GameObject HistoryScene;
+
+    public GameObject Cat;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class UIManager : MonoBehaviour
     {
         modellingScene.SetActive(false);
         gameScene.SetActive(true);
+        Cat.SetActive(true);
     }
 
     //public void PressButtonToHistory()
