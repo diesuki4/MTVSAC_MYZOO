@@ -12,7 +12,7 @@ public class UI_Top : MonoBehaviour
 
     public void OnClickCatListButton()
     {
-        
+        UI_CatList.Instance.Open();
     }
 
     public void OnClickSettingButton()
