@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HPManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class HPManager : MonoBehaviour
     public GameObject StateGood;
     public GameObject StateNormal;
     public GameObject StateBad;
+
+    public Text hpText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,5 +49,7 @@ public class HPManager : MonoBehaviour
             StateBad.SetActive(false);
         }
         hp = Mathf.Clamp(hp, 0, 100);
+
+        hpText.text = hp + "%";
     }
 }

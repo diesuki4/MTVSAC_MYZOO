@@ -11,6 +11,11 @@ public class UIManager : MonoBehaviour
     public GameObject HistoryScene;
 
     public GameObject Cat;
+    
+    public HPManager[] hpManagers;
+    public GameObject[] buttons;
+
+    public float coolTime = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -43,8 +48,16 @@ public class UIManager : MonoBehaviour
         Cat.SetActive(true);
     }
 
-    public void OnClickPlayBtn(HPManager hpManager)
+    public void OnClickPlayBtn(int index)
     {
-        hpManager.hp += 20;
+        hpManagers[index].hp += 20;
+        StartCoroutine(IECoolTime(buttons[index]));
+    }
+
+    IEnumerator IECoolTime(GameObject button)
+    {
+        button.SetActive(false);
+        yield return new WaitForSeconds(coolTime);
+        button.SetActive(true);
     }
 }

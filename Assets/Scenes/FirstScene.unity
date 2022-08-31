@@ -5328,10 +5328,10 @@ MonoBehaviour:
       - m_Target: {fileID: 968983408}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: OnClickPlayBtn
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1612541173}
-          m_ObjectArgumentAssemblyTypeName: HPManager, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7881,11 +7881,11 @@ MonoBehaviour:
       - m_Target: {fileID: 968983408}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: OnClickPlayBtn
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: HPManager, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8015,11 +8015,11 @@ MonoBehaviour:
       - m_Target: {fileID: 968983408}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: OnClickPlayBtn
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1370360343}
-          m_ObjectArgumentAssemblyTypeName: HPManager, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11123,11 +11123,11 @@ MonoBehaviour:
       - m_Target: {fileID: 968983408}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
         m_MethodName: OnClickPlayBtn
-        m_Mode: 2
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1181478636}
-          m_ObjectArgumentAssemblyTypeName: HPManager, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12652,7 +12652,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 968983407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b4ea1296f39d34a9b204980b9a6510, type: 3}
+  m_Script: {fileID: 11500000, guid: a103feaa2ab4acd49a7361886de68fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startScene: {fileID: 1102848855}
@@ -12660,7 +12660,17 @@ MonoBehaviour:
   modellingScene: {fileID: 335861578}
   gameScene: {fileID: 1390288404}
   HistoryScene: {fileID: 1472132112}
-  Cat: {fileID: 1991562417}
+  Cat: {fileID: 1694884011}
+  hpManagers:
+  - {fileID: 1612541173}
+  - {fileID: 1370360343}
+  - {fileID: 1181478636}
+  buttons:
+  - {fileID: 378034159}
+  - {fileID: 866041936}
+  - {fileID: 591820764}
+  - {fileID: 583168095}
+  coolTime: 10
 --- !u!4 &968983409
 Transform:
   m_ObjectHideFlags: 0
@@ -15943,6 +15953,7 @@ MonoBehaviour:
   StateGood: {fileID: 1388702910}
   StateNormal: {fileID: 70072165}
   StateBad: {fileID: 1608355435}
+  hpText: {fileID: 1147944776}
 --- !u!1001 &1186067421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18336,6 +18347,7 @@ MonoBehaviour:
   StateGood: {fileID: 1263775147}
   StateNormal: {fileID: 2095376892}
   StateBad: {fileID: 1671062122}
+  hpText: {fileID: 1304676641}
 --- !u!1001 &1370364525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21407,6 +21419,7 @@ MonoBehaviour:
   StateGood: {fileID: 1874965614}
   StateNormal: {fileID: 1017663662}
   StateBad: {fileID: 1425775078}
+  hpText: {fileID: 648242196}
 --- !u!1001 &1623859806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22662,7 +22675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8367472687251309124, guid: ad707f612f2a4fb448ecd42bc448e88c, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 1580
       objectReference: {fileID: 0}
     - target: {fileID: 8367472687583179498, guid: ad707f612f2a4fb448ecd42bc448e88c, type: 3}
       propertyPath: m_Pivot.x
@@ -22754,7 +22767,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8367472687583179499, guid: ad707f612f2a4fb448ecd42bc448e88c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8367472687741214230, guid: ad707f612f2a4fb448ecd42bc448e88c, type: 3}
       propertyPath: m_AnchorMax.y
@@ -22785,6 +22798,11 @@ PrefabInstance:
 --- !u!224 &1694884010 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8367472687583179498, guid: ad707f612f2a4fb448ecd42bc448e88c, type: 3}
+  m_PrefabInstance: {fileID: 1694884009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1694884011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8367472687583179499, guid: ad707f612f2a4fb448ecd42bc448e88c, type: 3}
   m_PrefabInstance: {fileID: 1694884009}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1705217091
