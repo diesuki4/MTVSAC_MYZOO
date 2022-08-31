@@ -28,7 +28,7 @@ public class UI_CatListItem : MonoBehaviour
             return;
         }
 
-        DownloadImage(m_Data.imageUrl);
+        StartCoroutine(DownloadImage(m_Data.imageUrl));
         m_TitleText.text = m_Data.title;
        // m_DescriptionText.text = 
     }

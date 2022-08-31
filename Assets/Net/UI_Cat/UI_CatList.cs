@@ -50,8 +50,8 @@ public class UI_CatList : MonoBehaviour
                 continue;
             }
             
-            Items[i].Init(list[i]);
             Items[i].gameObject.SetActive(true);
+            Items[i].Init(list[i]);
         }
     }
 
