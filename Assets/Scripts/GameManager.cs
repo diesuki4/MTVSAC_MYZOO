@@ -39,12 +39,11 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return wait;
-            
+
             if (UIManager.Instance.GameState == GameState.Main)
             {
                 Affection -= 1;
-                
-                
+
                 OnChangeCallback?.Invoke();
             }
         }
@@ -57,13 +56,13 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return wait;
-            
+
             if (UIManager.Instance.GameState == GameState.Main)
             {
                 Starvation -= 1;
                 Cleanliness -= 1;
-                
-                
+
+
                 OnChangeCallback?.Invoke();
             }
         }
