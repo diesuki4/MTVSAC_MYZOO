@@ -85,7 +85,6 @@ public class UIManager : MonoBehaviour
 
     public HPManager[] hpManagers;
     public GameObject[] buttons;
-    public Image[] disabled;
 
     public float coolTime = 10;
     
@@ -120,7 +119,7 @@ public class UIManager : MonoBehaviour
         int btnIdx = strIdx[0] - '0', imgIdx = strIdx[1] - '0';
 
         hpManagers[btnIdx].hp += 20;
-        StartCoroutine(IECoolTime(buttons[imgIdx], disabled[imgIdx]));
+        StartCoroutine(IECoolTime(buttons[imgIdx]));
 
         // walk
         if(imgIdx == 0)
@@ -144,19 +143,19 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    IEnumerator IECoolTime(GameObject button, Image imageDisabled)
+    IEnumerator IECoolTime(GameObject button)
     {
         float t = 0;
 
-        button.SetActive(false);
+        button.GetComponent<Button>().enabled = false;
 
-        while ((t += Time.deltaTime) < coolTime)
+        while ((t += Time.deltaTime) <= coolTime)
         {
-            imageDisabled.fillAmount = t / coolTime;
+            button.GetComponent<Image>().fillAmount = t / coolTime;
 
             yield return null;
         }
 
-        button.SetActive(true);
+        button.GetComponent<Button>().enabled = true;
     }
 }
