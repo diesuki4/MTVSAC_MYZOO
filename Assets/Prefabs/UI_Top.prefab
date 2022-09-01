@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 800039554374740677}
   - component: {fileID: 800039554374740682}
   - component: {fileID: 800039554374740683}
+  - component: {fileID: 2639675679279176360}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -89,9 +90,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 42, y: -40}
+  m_AnchoredPosition: {x: 72, y: -59}
   m_SizeDelta: {x: 60, y: 38}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &800039554374740677
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -186,6 +187,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2639675679279176360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800039554374740681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92c37b40145d2f42a401d6f2be8a075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RectTransform: {fileID: 0}
+  m_SubRectTransform: {fileID: 0}
+  m_Sacle: 1.04
+  Run: 1
+  m_Button: {fileID: 0}
+  Play: 0
 --- !u!1 &800039554629129358
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +217,7 @@ GameObject:
   - component: {fileID: 800039554629129354}
   - component: {fileID: 800039554629129355}
   - component: {fileID: 800039554629129352}
+  - component: {fileID: 3984434408142093034}
   m_Layer: 5
   m_Name: SettingButton
   m_TagString: Untagged
@@ -222,9 +242,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -40, y: -28}
+  m_AnchoredPosition: {x: -76, y: -64}
   m_SizeDelta: {x: 72, y: 72}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &800039554629129354
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -319,6 +339,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3984434408142093034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800039554629129358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92c37b40145d2f42a401d6f2be8a075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RectTransform: {fileID: 0}
+  m_SubRectTransform: {fileID: 0}
+  m_Sacle: 1.04
+  Run: 1
+  m_Button: {fileID: 0}
+  Play: 0
 --- !u!1 &800039554736999546
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +369,7 @@ GameObject:
   - component: {fileID: 800039554736999542}
   - component: {fileID: 800039554736999543}
   - component: {fileID: 800039554736999540}
+  - component: {fileID: 5809519928469218873}
   m_Layer: 5
   m_Name: CatListButton
   m_TagString: Untagged
@@ -355,9 +394,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -140, y: -30}
+  m_AnchoredPosition: {x: -175, y: -63.5}
   m_SizeDelta: {x: 70, y: 67}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &800039554736999542
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -452,6 +491,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5809519928469218873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800039554736999546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92c37b40145d2f42a401d6f2be8a075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RectTransform: {fileID: 0}
+  m_SubRectTransform: {fileID: 0}
+  m_Sacle: 1.04
+  Run: 1
+  m_Button: {fileID: 0}
+  Play: 0
 --- !u!1 &1173893656473831823
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +521,7 @@ GameObject:
   - component: {fileID: 9213830686636580148}
   - component: {fileID: 9083213874099773764}
   - component: {fileID: 5700823704848869534}
+  - component: {fileID: 4631531747581981274}
   m_Layer: 5
   m_Name: ReviewButton
   m_TagString: Untagged
@@ -488,9 +546,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -240, y: -30}
+  m_AnchoredPosition: {x: -275, y: -63.5}
   m_SizeDelta: {x: 70, y: 67}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9213830686636580148
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -585,3 +643,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4631531747581981274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173893656473831823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92c37b40145d2f42a401d6f2be8a075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RectTransform: {fileID: 0}
+  m_SubRectTransform: {fileID: 0}
+  m_Sacle: 1.04
+  Run: 1
+  m_Button: {fileID: 0}
+  Play: 0
