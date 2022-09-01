@@ -31,12 +31,12 @@ public class UI_Intro : MonoBehaviour
     private async UniTaskVoid Auth()
     {
         var response = await NetManager.Post<ResponseAuthPacket>(new RequestAuthPacket());
-        
+        Debug.LogError(response.data);
         if (response.result)
         {
-            Debug.LogError(response.data[0]);
+            Debug.LogError(response.data);
 
-            var data = response.data[0];
+            var data = response.data;
 
             GameManager.Instance.Affection = data.affection;
             GameManager.Instance.Starvation = data.starvation;
@@ -44,7 +44,7 @@ public class UI_Intro : MonoBehaviour
             GameManager.Instance.CatIndex = data.catIndex;
             GameManager.Instance.Species = data.species;
             GameManager.Instance.Age = data.age;
-            GameManager.Instance.Name = data.name;
+            GameManager.Instance.Name = data.catName;
             GameManager.Instance.Gender = data.gender;
 
             UIManager.Instance.SetGameState(GameState.Lobby);

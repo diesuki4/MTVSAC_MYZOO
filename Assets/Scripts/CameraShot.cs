@@ -41,6 +41,8 @@ public class CameraShot : MonoBehaviour
         Debug.Log("\nScreenshot has been taken and is now saving...");
         //screenshot.sprite = Sprite.Create(image, new Rect(0, 0, image.width, image.height), new Vector2(.5f, .5f));
         //screenshot.color = Color.white;
+        
+        // todo:넘기기
         GameManager.Instance.catImage = bytes;
         print(bytes.Length) ;
         
