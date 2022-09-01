@@ -8,17 +8,22 @@ public class HPManager : MonoBehaviour
     public int hp = 100;
     float currentTime;
     public float damageTime = 1;
+    bool isAgressive;
+    bool isDie;
 
     public GameObject StateGood;
     public GameObject StateNormal;
     public GameObject StateBad;
+
+    public Animator anim;
 
     public Text hpText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        isAgressive = true;
+        isDie = true;
     }
 
     // Update is called once per frame
@@ -41,6 +46,16 @@ public class HPManager : MonoBehaviour
             StateGood.SetActive(false);
             StateNormal.SetActive(false);
             StateBad.SetActive(true);
+            if(isAgressive == true)
+            {
+                anim.SetTrigger("Agressive");
+                isAgressive = false;
+            }
+            if(hp <= 0 && isDie == true)
+            {
+                anim.SetTrigger("Die");
+                isDie = false;
+            }
         }
         else
         {

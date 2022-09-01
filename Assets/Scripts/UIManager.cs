@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject Cat;
 
+    public Animator anim;
+
     public HPManager[] hpManagers;
     public GameObject[] buttons;
     public Image[] disabled;
@@ -62,6 +64,27 @@ public class UIManager : MonoBehaviour
 
         hpManagers[btnIdx].hp += 20;
         StartCoroutine(IECoolTime(buttons[imgIdx], disabled[imgIdx]));
+
+        // walk
+        if(imgIdx == 0)
+        {
+            anim.SetTrigger("Jump");
+        }
+        // feed
+        if (imgIdx == 1)
+        {
+            anim.SetTrigger("Feed");
+        }
+        // scratch
+        if (imgIdx == 2)
+        {
+            anim.SetTrigger("Scratch");
+        } 
+        // wash
+        if (imgIdx == 3)
+        {
+            anim.SetTrigger("Wash");
+        }
     }
 
     IEnumerator IECoolTime(GameObject button, Image imageDisabled)
