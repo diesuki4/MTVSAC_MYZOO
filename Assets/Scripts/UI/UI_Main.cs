@@ -25,22 +25,4 @@ public class UI_Main : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
-
-    public void OnClickSaveButton()
-    {
-        Save();
-    }
-
-    private async UniTaskVoid Save()
-    {
-        RequestSavePacket packet = new RequestSavePacket();
-
-        packet.catIndex = GameManager.Instance.CatIndex;
-        packet.affection = GameManager.Instance.Affection;
-        packet.starvation = GameManager.Instance.Starvation;
-        packet.cleanliness = GameManager.Instance.Cleanliness;
-
-        var response = await NetManager.Post<ResponseSavePacket>(packet);
-        Debug.LogError(response.result);
-    }
 }
