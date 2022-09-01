@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.IO;
+using Cysharp.Threading.Tasks;
+
 public class CameraShot : MonoBehaviour
 {
     public bool hideGUI = false;
@@ -44,9 +46,12 @@ public class CameraShot : MonoBehaviour
         
         // todo:넘기기
         GameManager.Instance.catImage = bytes;
-        print(bytes.Length) ;
+        
+        
         
     }
+
+  
 
     void ScreenshotSaved(string path)
     {

@@ -23,7 +23,7 @@ public abstract class IRequestPacket
         this.DeviceId = PlayerPrefs.GetString("UniqueIdentifier");        
 #else
         this.deviceId = UnityEngine.SystemInfo.deviceUniqueIdentifier;
-        this.deviceId = "84f06f1a6g824zh9";
+        //this.deviceId = "84f06f1a6g824zh9";
 
 #endif
     }

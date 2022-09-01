@@ -5,6 +5,8 @@ using System;
 using System.IO;
 using System.Collections;
 using System.Runtime.InteropServices;
+using Cysharp.Threading.Tasks;
+
 public class ScreenshotManager : MonoBehaviour
 {
 
@@ -91,12 +93,20 @@ public class ScreenshotManager : MonoBehaviour
         {
             bytes = texture.EncodeToPNG();
             fileExt = ".png";
+            
+            UploadImage(texture, global::ImageType.PNG);
+
         }
         else
         {
             bytes = texture.EncodeToJPG();
             fileExt = ".jpg";
+            
+            UploadImage(texture, global::ImageType.JPG);
+
         }
+        
+
         if (OnScreenshotTaken != null)
             OnScreenshotTaken(bytes);
         else
@@ -110,17 +120,33 @@ public class ScreenshotManager : MonoBehaviour
 
         if (Application.platform == RuntimePlatform.Android)
         {
-            string androidPath = Path.Combine(albumName, screenshotFilename);
-            path = Path.Combine(Application.persistentDataPath, androidPath);
-            string pathonly = Path.GetDirectoryName(path);
-            Directory.CreateDirectory(pathonly);
+            //string androidPath = Path.Combine(albumName, screenshotFilename);
+           // path = Path.Combine(Application.persistentDataPath, androidPath);
+            //string pathonly = Path.GetDirectoryName(path);
+            //Directory.CreateDirectory(pathonly);
         }
 
 #endif
 
-        Instance.StartCoroutine(Instance.Save(bytes, fileName, path, ImageType.SCREENSHOT));
+        //Instance.StartCoroutine(Instance.Save(bytes, fileName, path, ImageType.SCREENSHOT));
+
     }
 
+    private async UniTaskVoid UploadImage(Texture2D texture, global::ImageType type)
+    {
+        Debug.LogError("이미지 업로드");
+        
+        var response = await ImageUploader
+            .Initialize()
+            .SetTexture(texture)
+            .SetFieldName("image")
+            .SetType(type)
+            .SetUploaderId() // DeviceId (자동으로 불러옴)
+            .SetUrl($"{NetDefine.NET_SERVER_ADDR}upload")
+            .OnError(error => Debug.Log(error))
+            .OnComplete(text => Debug.Log(text))
+            .StartUploading();
+    }
 
     //=============================================================================
     // Save texture
