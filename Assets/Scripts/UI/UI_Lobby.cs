@@ -49,7 +49,7 @@ public class UI_Lobby : MonoBehaviour
 
     void RefreshUI()
     {
-        HelloText.text = "안녕" + GameManager.Instance.Name;
+        HelloText.text = "안녕, " + GameManager.Instance.Name;
         InfoText.text = "#" + GameManager.Instance.Species + " #" + GameManager.Instance.Age + "살 #" + GameManager.Instance.Gender;
         CatCareText.text = GameManager.Instance.Name + " 돌보기 가기";
     }

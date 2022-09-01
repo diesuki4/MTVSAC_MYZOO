@@ -25,4 +25,13 @@ public class UI_Main : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public Text HelloText;
+    public Text InfoText;
+
+    void RefreshUI()
+    {
+        HelloText.text = "안녕, " + GameManager.Instance.Name;
+        InfoText.text = "#" + GameManager.Instance.Species + " #" + GameManager.Instance.Age + "살 #" + GameManager.Instance.Gender;
+    }
 }

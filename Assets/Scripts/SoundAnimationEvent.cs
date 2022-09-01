@@ -17,8 +17,4 @@ public class SoundAnimationEvent : MonoBehaviour
         
     }
 
-    public void OnEventWalk()
-    {
-        UM.OnEventWalk();
-    }
 }
