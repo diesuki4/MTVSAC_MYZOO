@@ -2197,13 +2197,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13cc1e7660ba774c92f5ee6cb0290ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  damageTime: 1
   StateGood: {fileID: 1252762238145431189}
   StateNormal: {fileID: 1252762237392085589}
   StateBad: {fileID: 1252762239133592349}
   anim: {fileID: 1252762238554374070}
   hpText: {fileID: 1252762237224638191}
+  type: 
 --- !u!1 &1252762238441808627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,13 +2784,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13cc1e7660ba774c92f5ee6cb0290ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  damageTime: 2
   StateGood: {fileID: 1252762239168601669}
   StateNormal: {fileID: 1252762237785998750}
   StateBad: {fileID: 1252762238951013520}
   anim: {fileID: 1252762238554374070}
   hpText: {fileID: 1252762238715755482}
+  type: 
 --- !u!1 &1252762238826525051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,6 +3418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c89826b7259ed4b47bd36d3c4f18184f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HelloText: {fileID: 0}
+  InfoText: {fileID: 0}
 --- !u!225 &1252762239169015021
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3476,13 +3476,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13cc1e7660ba774c92f5ee6cb0290ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 100
-  damageTime: 2
   StateGood: {fileID: 1252762238741946192}
   StateNormal: {fileID: 1252762238461926151}
   StateBad: {fileID: 1252762238351397009}
   anim: {fileID: 1252762238554374070}
   hpText: {fileID: 1252762238855613875}
+  type: 
 --- !u!1 &1275670937803928564
 GameObject:
   m_ObjectHideFlags: 0
