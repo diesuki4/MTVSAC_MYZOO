@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class NetDefine
 {
-    public const string NET_SERVER_ADDR = "http://127.0.0.1:8888";
+    public const string NET_SERVER_ADDR = "http://192.168.1.12:8889/";
     //public const string NET_SERVER_ADDR = "http://192.168.0.37:5080";
 
         

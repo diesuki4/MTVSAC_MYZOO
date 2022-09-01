@@ -9,7 +9,7 @@ public abstract class IRequestPacket
     [JsonIgnore]
     public string url { get; }
 
-    public string DeviceId { get; private set; }
+    public string deviceId { get; private set; }
     
     
     protected IRequestPacket(string url)
@@ -22,7 +22,7 @@ public abstract class IRequestPacket
         
         this.DeviceId = PlayerPrefs.GetString("UniqueIdentifier");        
 #else
-        this.DeviceId = UnityEngine.SystemInfo.deviceUniqueIdentifier;
+        this.deviceId = UnityEngine.SystemInfo.deviceUniqueIdentifier;
 
 #endif
     }

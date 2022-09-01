@@ -6,10 +6,17 @@ using UnityEngine.Android;
 
 public class CameraManager : MonoBehaviour
 {
+    public static CameraManager Instance;
+    
+    
     WebCamTexture camTexture;
 
     public RawImage cameraViewImage;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     public void CameraOn()
     {
         if (!Permission.HasUserAuthorizedPermission(Permission.Camera))

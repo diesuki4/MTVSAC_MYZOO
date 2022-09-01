@@ -3,8 +3,76 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum GameState
+{
+    Intro,
+    Start,
+    Camera,
+    Lobby,
+    Main,
+}
+
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance;
+
+    private GameState m_GameState = GameState.Intro;
+    public GameState GameState => m_GameState;
+    
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        RefreshUI();
+    }
+
+    public void SetGameState(GameState state)
+    {
+        if (m_GameState == state)
+        {
+            return;
+        }
+
+        m_GameState = state;
+        
+        RefreshUI();
+    }
+    
+    private void RefreshUI()
+    {
+        UI_Intro.Instance.Hide();
+        UI_Start.Instance.Hide();
+        UI_Camera.Instance.Hide();
+        
+        
+        switch (m_GameState)
+        {
+            case GameState.Intro:
+                UI_Intro.Instance.Show();
+                break;
+            
+            case GameState.Start:
+                UI_Start.Instance.Show();
+                break;
+            
+            case GameState.Camera:
+                UI_Camera.Instance.Show();
+                break;
+            
+            case GameState.Lobby:
+                break;
+            
+            case GameState.Main:
+                break;
+        }
+    }
+    
+    
+    
+    
     public GameObject startScene;
     public GameObject cameraScene;
     public GameObject modellingScene;
@@ -20,18 +88,7 @@ public class UIManager : MonoBehaviour
     public Image[] disabled;
 
     public float coolTime = 10;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 
     public void PressButtonToCamera()
     {
