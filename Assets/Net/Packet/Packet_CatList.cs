@@ -12,7 +12,7 @@ public class CatListResponseData
 
 public class RequestCatListPacket : IRequestPacket
 {
-    public RequestCatListPacket() : base("cats/catlist")
+    public RequestCatListPacket() : base("cats/catinfos")
     {
         
     }
