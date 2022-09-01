@@ -41,9 +41,12 @@ public class UI_Intro : MonoBehaviour
             GameManager.Instance.Affection = data.affection;
             GameManager.Instance.Starvation = data.starvation;
             GameManager.Instance.Cleanliness = data.cleanliness;
-            
-            
-            
+            GameManager.Instance.CatIndex = data.catIndex;
+            GameManager.Instance.Species = data.species;
+            GameManager.Instance.Age = data.age;
+            GameManager.Instance.Name = data.name;
+            GameManager.Instance.Gender = data.gender;
+
             UIManager.Instance.SetGameState(GameState.Lobby);
             return;
         }

@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using UniRx;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UI_Lobby : MonoBehaviour
+{
+    public static UI_Lobby Instance;
+
+    private void Awake()
+    {
+        GetComponent<CanvasGroup>().alpha = 1;
+        
+        Instance = this;
+    }
+
+    public void Show()
+    {
+        RefreshUI();
+        
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public Text HelloText;
+    public Text InfoText;
+    public Text CatCareText;
+
+    void RefreshUI()
+    {
+        HelloText.text = "안녕" + GameManager.Instance.Name;
+        InfoText.text = "#" + GameManager.Instance.Species + " #" + GameManager.Instance.Age + "살 #" + GameManager.Instance.Gender;
+        CatCareText.text = GameManager.Instance.Name + " 돌보기 가기";
+    }
+}

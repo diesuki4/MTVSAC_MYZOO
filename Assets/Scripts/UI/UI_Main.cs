@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI_Camera : MonoBehaviour
+public class UI_Main : MonoBehaviour
 {
-    public static UI_Camera Instance;
+    public static UI_Main Instance;
 
     private void Awake()
     {
@@ -16,8 +16,6 @@ public class UI_Camera : MonoBehaviour
 
     public void Show()
     {
-        CameraManager.Instance.CameraOn();
-
         gameObject.SetActive(true);
     }
 
@@ -26,10 +24,10 @@ public class UI_Camera : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-
-    public void OnClickShotButton()
+    public void OnClickCameraButton()
     {
-        CameraManager.Instance.GetComponent<CameraShot>().OnSaveScreenshotPress();
-        //UIManager.Instance.PressButtonToSave();
+        //         CameraManager.Instance.CameraOn();
+
+        UIManager.Instance.SetGameState(GameState.Camera);
     }
 }

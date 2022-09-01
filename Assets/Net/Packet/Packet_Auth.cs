@@ -16,7 +16,11 @@ public class MycatInfo
 
 public class RequestAuthPacket : IRequestPacket
 {
+<<<<<<< Updated upstream
     public  RequestAuthPacket() : base("cats/auth")
+=======
+    public RequestAuthPacket() : base("auth")
+>>>>>>> Stashed changes
     {   
         
     }
