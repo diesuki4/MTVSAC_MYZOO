@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using UniRx;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +13,10 @@ public class UI_Review : MonoBehaviour
     public UI_ReviewItem Prefab;
 
     public List<UI_ReviewItem> Items;
+
+    public InputField m_NameInputField;
+    public InputField m_ContentInputField;
+    public Button m_UploadButton;
     
     private void Awake()
     {
@@ -74,4 +80,30 @@ public class UI_Review : MonoBehaviour
         
         gameObject.SetActive(false);
     }
+
+    public void OnChangeText(string text)
+    {
+        m_UploadButton.interactable = m_NameInputField.text != string.Empty && m_ContentInputField.text != string.Empty;
+    }
+    
+    public void OnClickUpload()
+    {
+
+
+        Upload(m_NameInputField.text, m_ContentInputField.text);
+            
+        m_NameInputField.text = string.Empty;
+        m_ContentInputField.text = string.Empty;
+    }
+    public async UniTaskVoid Upload(string name, string content)
+    {
+        Debug.Log("리뷰 작성 요청");
+        var response = await NetManager.Post<ResponseReviewInsertPacket>(new RequestReviewInsertPacket(name, content));
+
+        if (response.result)
+        {
+            ReviewManager.Instance.LoadList();
+        }
+    }
+    
 }

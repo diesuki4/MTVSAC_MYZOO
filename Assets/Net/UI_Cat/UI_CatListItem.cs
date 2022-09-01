@@ -30,8 +30,8 @@ public class UI_CatListItem : MonoBehaviour
 
         StartCoroutine(DownloadImage(m_Data.imgUrl));
         Debug.LogError(m_Data.imgUrl);
-        m_TitleText.text = m_Data.imgIndex.ToString();
-       // m_DescriptionText.text = 
+        m_TitleText.text = m_Data.catName;
+        m_DescriptionText.text = $"#{m_Data.species} #{m_Data.age}years #{m_Data.gender}";
     }
     
     IEnumerator DownloadImage(string url)
