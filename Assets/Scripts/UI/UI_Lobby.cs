@@ -16,6 +16,18 @@ public class UI_Lobby : MonoBehaviour
         Instance = this;
     }
 
+    public Transform light;
+
+    void OnEnable()
+    {
+        light.eulerAngles = new Vector3(28.229f, 149.548f, 179.703f);
+    }
+
+    void OnDisable()
+    {
+        light.eulerAngles = new Vector3(50, -30, 0);
+    }
+
     public void Show()
     {
         RefreshUI();
@@ -37,5 +49,10 @@ public class UI_Lobby : MonoBehaviour
         HelloText.text = "안녕" + GameManager.Instance.Name;
         InfoText.text = "#" + GameManager.Instance.Species + " #" + GameManager.Instance.Age + "살 #" + GameManager.Instance.Gender;
         CatCareText.text = GameManager.Instance.Name + " 돌보기 가기";
+    }
+
+    public void OnNextSceneButtonClick()
+    {
+        UIManager.Instance.SetGameState(GameState.Main);
     }
 }
