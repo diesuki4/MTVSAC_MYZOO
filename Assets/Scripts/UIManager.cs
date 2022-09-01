@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,22 +12,23 @@ public class UIManager : MonoBehaviour
     public GameObject HistoryScene;
 
     public GameObject Cat;
-    
+
     public HPManager[] hpManagers;
     public GameObject[] buttons;
+    public Image[] disabled;
 
     public float coolTime = 10;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void PressButtonToCamera()
@@ -48,16 +50,33 @@ public class UIManager : MonoBehaviour
         Cat.SetActive(true);
     }
 
-    public void OnClickPlayBtn(int index)
+    public void PressButtonToBack()
     {
-        hpManagers[index].hp += 20;
-        StartCoroutine(IECoolTime(buttons[index]));
+        modellingScene.SetActive(false);
+        cameraScene.SetActive(true);
     }
 
-    IEnumerator IECoolTime(GameObject button)
+    public void OnClickPlayBtn(string strIdx)
     {
+        int btnIdx = strIdx[0] - '0', imgIdx = strIdx[1] - '0';
+
+        hpManagers[btnIdx].hp += 20;
+        StartCoroutine(IECoolTime(buttons[imgIdx], disabled[imgIdx]));
+    }
+
+    IEnumerator IECoolTime(GameObject button, Image imageDisabled)
+    {
+        float t = 0;
+
         button.SetActive(false);
-        yield return new WaitForSeconds(coolTime);
+
+        while ((t += Time.deltaTime) < coolTime)
+        {
+            imageDisabled.fillAmount = t / coolTime;
+
+            yield return null;
+        }
+
         button.SetActive(true);
     }
 }
