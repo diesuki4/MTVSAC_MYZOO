@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public string Name;
     public string Gender;
 
+    public byte[] catImage;
+
     public Action OnChangeCallback;
 
     private void Awake()
