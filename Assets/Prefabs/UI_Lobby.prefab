@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8976967230627926871}
   - component: {fileID: 8902669139514105306}
   - component: {fileID: 2675102729240333533}
+  - component: {fileID: 1511245891}
   m_Layer: 0
   m_Name: NextSceneButton
   m_TagString: Untagged
@@ -134,6 +135,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1511245891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631970105280436080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92c37b40145d2f42a401d6f2be8a075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RectTransform: {fileID: 0}
+  m_SubRectTransform: {fileID: 0}
+  m_Sacle: 0.96
+  Run: 1
+  m_Button: {fileID: 0}
+  Play: 0
 --- !u!1 &3979116665265304775
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +189,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 900, y: 600}
+  m_SizeDelta: {x: 1200, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5671893375515383396
 CanvasRenderer:
@@ -511,6 +530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc3b4aca32fcdb4888b6a85411f6aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  light: {fileID: 0}
+  lobbyCat: {fileID: 0}
   HelloText: {fileID: 9035884891393784634}
   InfoText: {fileID: 9035884890727967372}
   CatCareText: {fileID: 9056067966359327306}
