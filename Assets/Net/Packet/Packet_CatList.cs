@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class CatListResponseData
 {
-    public int index;
-    public string title;
-    public string imageUrl;
+    public int imgIndex;
+    public string imgUrl;
+    public string imgDateTime;
     public string location;
-    public string date;
-    public string description;
 }
 
 public class RequestCatListPacket : IRequestPacket
@@ -22,5 +20,5 @@ public class RequestCatListPacket : IRequestPacket
 
 public class ResponseCatListPacket : ResponsePacket
 {
-    public CatListResponseData[] data { get; private set; }
+    public CatListResponseData[] results { get; private set; }
 }

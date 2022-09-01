@@ -34,13 +34,15 @@ public class CatListManager : MonoBehaviour
         if (response.result)
         {
             m_Data.Clear();
-            
-            var catDataList = response.data;
+
+            var catDataList = response.results;
 
             for (int i = 0; i < catDataList.Length; ++i)
             {
                 m_Data.Add(catDataList[i]);
             }
+            
+            Debug.LogError(m_Data.Count);
             
             OnChangeCallback?.Invoke();
         }
