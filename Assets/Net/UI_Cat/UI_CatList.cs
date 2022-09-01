@@ -34,7 +34,8 @@ public class UI_CatList : MonoBehaviour
             {
                 var item = Instantiate<UI_CatListItem>(Prefab);
                 item.transform.SetParent(ScrollParent);
-                
+                item.GetComponent<RectTransform>().localScale = Vector3.one;
+
                 Items.Add(item);
             }
 

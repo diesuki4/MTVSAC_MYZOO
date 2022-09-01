@@ -10,6 +10,11 @@ public class UI_Top : MonoBehaviour
         
     }
 
+    public void OnClickReviewButton()
+    {
+        UI_Review.Instance.Open();
+    }
+    
     public void OnClickCatListButton()
     {
         UI_CatList.Instance.Open();
