@@ -131,9 +131,15 @@ public enum ImageType
 			{
 				case ImageType.PNG:
 					textureBytes = imageTexture_copy.EncodeToPNG();
+					Debug.LogError(textureBytes.Length);
+					Debug.LogError("Png");
 					break;
 				case ImageType.JPG:
 					textureBytes = imageTexture_copy.EncodeToJPG();
+					Debug.LogError(textureBytes.Length);
+
+					Debug.LogError("Jpg");
+
 					break;
 			}
 
@@ -150,7 +156,7 @@ public enum ImageType
 			// 글 등록일 땐 index는 "-1"임
 
 			UnityWebRequest w = UnityWebRequest.Post(url, form);
-
+			Debug.LogError(url);
 			await w.SendWebRequest();
 
 			if (w.error != null)

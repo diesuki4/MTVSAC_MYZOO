@@ -142,7 +142,8 @@ public class ScreenshotManager : MonoBehaviour
             .SetFieldName("image")
             .SetType(type)
             .SetUploaderId() // DeviceId (자동으로 불러옴)
-            .SetUrl($"{NetDefine.NET_SERVER_ADDR}upload")
+            //.SetUrl($"{NetDefine.NET_SERVER_ADDR}upload")
+            .SetUrl($"http://192.168.1.59:8888/upload")
             .OnError(error => Debug.Log(error))
             .OnComplete(text => Debug.Log(text))
             .StartUploading();
