@@ -58,6 +58,8 @@ public class UI_CatList : MonoBehaviour
     public void Open()
     {
         gameObject.SetActive(true);
+
+        CatListManager.Instance.LoadList();
         
         CatListManager.Instance.OnChangeCallback += Refresh;
 
