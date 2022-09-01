@@ -17,15 +17,18 @@ public class UI_Lobby : MonoBehaviour
     }
 
     public Transform light;
+    public GameObject lobbyCat;
 
     void OnEnable()
     {
         light.eulerAngles = new Vector3(28.229f, 149.548f, 179.703f);
+        lobbyCat.SetActive(true);
     }
 
     void OnDisable()
     {
         light.eulerAngles = new Vector3(50, -30, 0);
+        lobbyCat.SetActive(false);
     }
 
     public void Show()

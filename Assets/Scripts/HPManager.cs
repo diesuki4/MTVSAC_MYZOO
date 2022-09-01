@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class HPManager : MonoBehaviour
 {
-    public int hp = 100;
-    float currentTime;
-    public float damageTime = 1;
     bool isAgressive;
     bool isDie;
 
@@ -19,6 +16,8 @@ public class HPManager : MonoBehaviour
 
     public Text hpText;
 
+    public string type;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +28,21 @@ public class HPManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.deltaTime;
-        if (currentTime > damageTime)
+        int hp = 0;
+
+        switch (type)
         {
-            hp--;
-            currentTime = 0;        
+            case "Affection":
+                hp = GameManager.Instance.Affection;
+                break;
+            case "Starvation":
+                hp = GameManager.Instance.Starvation;
+                break;
+            case "Cleanliness":
+                hp = GameManager.Instance.Cleanliness;
+                break;
         }
+
         if(hp >= 70)
         {
             StateGood.SetActive(true);
@@ -63,7 +71,21 @@ public class HPManager : MonoBehaviour
             StateNormal.SetActive(true);
             StateBad.SetActive(false);
         }
+  
         hp = Mathf.Clamp(hp, 0, 100);
+
+        switch (type)
+        {
+            case "Affection":
+                GameManager.Instance.Affection = hp;
+                break;
+            case "Starvation":
+                GameManager.Instance.Starvation = hp;
+                break;
+            case "Cleanliness":
+                GameManager.Instance.Cleanliness = hp;
+                break;
+        }
 
         hpText.text = hp + "%";
     }

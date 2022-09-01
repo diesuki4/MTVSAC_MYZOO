@@ -83,7 +83,7 @@ public class UIManager : MonoBehaviour
                 break;
             
             case GameState.Lobby:
-                UI_Main.Instance.Show();
+                UI_Lobby.Instance.Show();
                 break;
             
             case GameState.Main:
@@ -136,30 +136,43 @@ public class UIManager : MonoBehaviour
         cameraScene.SetActive(true);
     }
 
-    public void OnClickPlayBtn(string strIdx)
+    public void OnClickPlayBtn(int idx)
     {
-        int btnIdx = strIdx[0] - '0', imgIdx = strIdx[1] - '0';
+        switch (idx)
+        {
+            case 0 :
+                GameManager.Instance.Affection += 20;
+                break;
+            case 1 :
+                GameManager.Instance.Starvation += 20;
+                break;
+            case 2 :
+                GameManager.Instance.Affection += 20;
+                break;
+            case 3:
+                GameManager.Instance.Cleanliness += 20;
+                break;
+        }
 
-        hpManagers[btnIdx].hp += 20;
-        StartCoroutine(IECoolTime(buttons[imgIdx]));
+        StartCoroutine(IECoolTime(buttons[idx]));
 
         // walk
-        if(imgIdx == 0)
+        if(idx == 0)
         {
             anim.SetTrigger("Jump");
         }
         // feed
-        if (imgIdx == 1)
+        if (idx == 1)
         {
             anim.SetTrigger("Feed");
         }
         // scratch
-        if (imgIdx == 2)
+        if (idx == 2)
         {
             anim.SetTrigger("Scratch");
         } 
         // wash
-        if (imgIdx == 3)
+        if (idx == 3)
         {
             anim.SetTrigger("Wash");
         }

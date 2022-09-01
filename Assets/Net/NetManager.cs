@@ -34,8 +34,10 @@ public static class NetManager
     {
         try
         {
-            var fullURL = NetDefine.NET_SERVER_ADDR + url;
+            bool isFlask = url == "InsertBoard" || url == "LoadBoard";
+            var fullURL = isFlask ? NetDefine.NET_SERVER_ADDR2 + url : NetDefine.NET_SERVER_ADDR + url;
 
+            Debug.LogError(fullURL);
             using var req = UnityWebRequest.Put(fullURL, Encoding.UTF8.GetBytes(json));
             req.method = UnityWebRequest.kHttpVerbPOST;
             req.useHttpContinue = false;

@@ -37,6 +37,7 @@ public class CatListManager : MonoBehaviour
 
             var catDataList = response.results;
 
+            Debug.Log(catDataList.Length);
             for (int i = 0; i < catDataList.Length; ++i)
             {
                 m_Data.Add(catDataList[i]);

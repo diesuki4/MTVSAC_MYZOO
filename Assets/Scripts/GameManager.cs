@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
+using UniRx;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -39,12 +41,11 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return wait;
-            
+
             if (UIManager.Instance.GameState == GameState.Main)
             {
                 Affection -= 1;
-                
-                
+
                 OnChangeCallback?.Invoke();
             }
         }
@@ -57,17 +58,45 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             yield return wait;
-            
+
             if (UIManager.Instance.GameState == GameState.Main)
             {
                 Starvation -= 1;
                 Cleanliness -= 1;
-                
-                
+
+
                 OnChangeCallback?.Invoke();
             }
         }
     }
-    
-    
+
+    private IEnumerator OneMinuteTick()
+    {
+        var wait = new WaitForSeconds(60f);
+
+        while (true)
+        {
+            yield return wait;
+
+            if (UIManager.Instance.GameState == GameState.Main)
+            {
+                Save();
+
+                OnChangeCallback?.Invoke();
+            }
+        }
+    }
+
+    private async UniTaskVoid Save()
+    {
+        RequestSavePacket packet = new RequestSavePacket();
+
+        packet.catIndex = GameManager.Instance.CatIndex;
+        packet.affection = GameManager.Instance.Affection;
+        packet.starvation = GameManager.Instance.Starvation;
+        packet.cleanliness = GameManager.Instance.Cleanliness;
+
+        var response = await NetManager.Post<ResponseSavePacket>(packet);
+        Debug.LogError(response.result);
+    }
 }
