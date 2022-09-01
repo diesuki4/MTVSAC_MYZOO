@@ -46,7 +46,8 @@ public class UIManager : MonoBehaviour
         UI_Intro.Instance.Hide();
         UI_Start.Instance.Hide();
         UI_Camera.Instance.Hide();
-        
+        UI_Lobby.Instance.Hide();
+        UI_Main.Instance.Hide();
         
         switch (m_GameState)
         {
@@ -63,9 +64,11 @@ public class UIManager : MonoBehaviour
                 break;
             
             case GameState.Lobby:
+                UI_Main.Instance.Show();
                 break;
             
             case GameState.Main:
+                UI_Main.Instance.Show();
                 break;
         }
     }

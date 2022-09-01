@@ -16,7 +16,7 @@ public class MycatInfo
 
 public class RequestAuthPacket : IRequestPacket
 {
-    public  RequestAuthPacket() : base("auth")
+    public  RequestAuthPacket() : base("cats/auth")
     {   
         
     }

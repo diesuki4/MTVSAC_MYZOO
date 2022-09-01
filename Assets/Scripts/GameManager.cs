@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     public int Affection;
     public int Starvation;
     public int Cleanliness;
+    public int CatIndex;
+    public string Species;
+    public int Age;
+    public string Name;
+    public string Gender;
 
     public Action OnChangeCallback;
 
