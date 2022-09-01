@@ -53,7 +53,10 @@ namespace IL3DN
 
         private void Update()
         {
-            RotateView();
+            if (Input.GetMouseButton(1) || Input.touchCount >= 2)
+            {
+                RotateView();
+            }
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
             {
