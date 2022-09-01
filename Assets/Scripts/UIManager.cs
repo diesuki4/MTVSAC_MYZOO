@@ -19,6 +19,16 @@ public class UIManager : MonoBehaviour
     private GameState m_GameState = GameState.Intro;
     public GameState GameState => m_GameState;
     
+    public GameObject WalkSoundObj;
+    AudioSource WalkSound;
+    public GameObject FeedSoundObj;
+    AudioSource FeedSound;
+    public GameObject ScratchSoundObj;
+    AudioSource ScratchSound;
+    public GameObject CleanSoundObj;
+    AudioSource CleanSound;
+
+
     private void Awake()
     {
         Instance = this;
@@ -27,6 +37,15 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         RefreshUI();
+        WalkSound = WalkSoundObj.GetComponent<AudioSource>();
+        FeedSound = FeedSoundObj.GetComponent<AudioSource>();
+        ScratchSound = ScratchSoundObj.GetComponent<AudioSource>();
+        CleanSound = CleanSoundObj.GetComponent<AudioSource>();
+        WalkSound.Stop();
+        FeedSound.Stop();
+        ScratchSound.Stop();
+        CleanSound.Stop();
+
     }
 
     public void SetGameState(GameState state)
@@ -144,6 +163,13 @@ public class UIManager : MonoBehaviour
         {
             anim.SetTrigger("Wash");
         }
+    }
+
+    internal void OnEventWalk()
+    {
+        print("Sound");
+        WalkSound.Stop();
+        WalkSound.Play();
     }
 
     IEnumerator IECoolTime(GameObject button)
