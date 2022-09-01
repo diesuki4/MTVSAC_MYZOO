@@ -10,7 +10,7 @@ public class ScreenshotManager : MonoBehaviour
 
     enum ImageType { IMAGE, SCREENSHOT };
     enum SaveStatus { NOTSAVED, SAVED, DENIED, TIMEOUT };
-    public static event Action<Texture2D> OnScreenshotTaken;
+    public static event Action<byte[]> OnScreenshotTaken;
     public static event Action<string> OnScreenshotSaved;
     public static event Action<string> OnImageSaved;
     static ScreenshotManager instance = null;
@@ -98,7 +98,7 @@ public class ScreenshotManager : MonoBehaviour
             fileExt = ".jpg";
         }
         if (OnScreenshotTaken != null)
-            OnScreenshotTaken(texture);
+            OnScreenshotTaken(bytes);
         else
             Destroy(texture);
 
